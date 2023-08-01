@@ -6,23 +6,23 @@ intents:
 
 ​slots:
   option:
-    type: unfeaturized
+    type: text
 
 responses:
    utter_greet:
     - text: "Bonjour! Comment puis-je vous aider aujourd'hui?"
-  utter_ask_options:
+   utter_ask_options:
     - text: "Que souhaitez-vous faire?"
-    - buttons:
-      - title: "Ajouter une tâche"
-        payload: "/add_task"
-      - title: "Modifier une tâche"
-        payload: "/modify_task"
-      - title: "Supprimer une tâche"
-        payload: "/delete_task"
-      - title: "Consulter les tâches"
-        payload: "/view_tasks"
-  utter_selected_option:
+      buttons:
+        - title: "Ajouter une tâche"
+          payload: "/add_task"
+        - title: "Modifier une tâche"
+          payload: "/modify_task"
+        - title: "Supprimer une tâche"
+          payload: "/delete_task"
+        - title: "Consulter les tâches"
+          payload: "/view_tasks"
+   utter_selected_option:
     - text: "Vous avez choisi l'option: {option}"
 
 session_config:

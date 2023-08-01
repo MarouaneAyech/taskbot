@@ -2,13 +2,13 @@ version: "3.1"
 
 stories:
 - story: User Chooses Option
-    steps:
+  steps:
       - user: |
           /greet
       - action: utter_greet
       - action: utter_ask_options
       - intent: select_option
       - slot_was_set:
-          - option: "/{option}"
+          - option: "/add_task"
       - action: utter_selected_option
 

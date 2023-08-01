@@ -1,7 +1,7 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+  - intent: greet
     examples: |
       - bonjour
       - salut
