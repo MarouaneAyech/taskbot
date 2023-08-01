@@ -2,32 +2,28 @@ version: "3.1"
 
 intents:
   - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - select_option
+
+​slots:
+  option:
+    type: unfeaturized
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+   utter_greet:
+    - text: "Bonjour! Comment puis-je vous aider aujourd'hui?"
+  utter_ask_options:
+    - text: "Que souhaitez-vous faire?"
+    - buttons:
+      - title: "Ajouter une tâche"
+        payload: "/add_task"
+      - title: "Modifier une tâche"
+        payload: "/modify_task"
+      - title: "Supprimer une tâche"
+        payload: "/delete_task"
+      - title: "Consulter les tâches"
+        payload: "/view_tasks"
+  utter_selected_option:
+    - text: "Vous avez choisi l'option: {option}"
 
 session_config:
   session_expiration_time: 60
