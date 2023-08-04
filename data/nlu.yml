@@ -5,18 +5,24 @@ nlu:
     examples: |
       - bonjour
       - salut
-      - coucou
-  - intent: select_option
+
+  - intent: add
     examples: |
       - ajouter une tâche
-      - ajouter tâche
-      - ajouter tache
-      - modifier une tâche
-      - modifier tâche
-      - modifier tache
+      - insérer une tâche
+
+  - intent: delete
+    examples: |
       - supprimer une tâche
-      - supprimer tâche
-      - supprimer tache
-      - consulter les tâches
-      - consulter tâches
-      - consulter tache
+      - enlever une tâche
+      - effacer une tâche
+
+  - intent: modify
+    examples: |
+      - modifier une tâche
+      - changer une tâche
+
+  - intent: consult
+    examples: |
+      - consulter le calendrier
+      - afficher le calendrier

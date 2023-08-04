@@ -2,28 +2,47 @@ version: "3.1"
 
 intents:
   - greet
-  - select_option
-
-​slots:
-  option:
-    type: text
+  - add
+  - delete
+  - modify
+  - consult
 
 responses:
-   utter_greet:
-    - text: "Bonjour! Comment puis-je vous aider aujourd'hui?"
-   utter_ask_options:
-    - text: "Que souhaitez-vous faire?"
+
+  utter_greet:
+    - text: "Bonjour" 
+
+  utter_show_options: 
+    - text : "Voici mes options :"
       buttons:
-        - title: "Ajouter une tâche"
-          payload: "/add_task"
-        - title: "Modifier une tâche"
-          payload: "/modify_task"
-        - title: "Supprimer une tâche"
-          payload: "/delete_task"
-        - title: "Consulter les tâches"
-          payload: "/view_tasks"
-   utter_selected_option:
-    - text: "Vous avez choisi l'option: {option}"
+      - title: "Ajouter"
+        payload: '/add'
+      - title: "Supprimer"
+        payload: '/delete'
+      - title: "Modifier"
+        payload: '/modify'
+      - title: "Consulter"
+        payload: '/consult'
+
+  utter_show_selected_option:
+    - text: "Votre choix est \"{option}\""
+
+slots:
+  option:
+    type: text
+    mappings:
+    - type: from_intent
+      intent: add
+      value: Ajouter
+    - type: from_intent
+      intent: delete
+      value: Supp
+    - type: from_intent
+      intent: modify
+      value: modifier
+    - type: from_intent
+      intent: consult
+      value: consulter
 
 session_config:
   session_expiration_time: 60

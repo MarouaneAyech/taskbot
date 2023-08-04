@@ -1,14 +1,34 @@
 version: "3.1"
 
 stories:
-- story: User Chooses Option
-  steps:
-      - user: |
-          /greet
+  - story: User chooses to add
+    steps:
+      - intent: greet
       - action: utter_greet
-      - action: utter_ask_options
-      - intent: select_option
-      - slot_was_set:
-          - option: "/add_task"
-      - action: utter_selected_option
+      - action: utter_show_options
+      - intent: add
+      - action: utter_show_selected_option
 
+  - story: User chooses to delete
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_show_options
+      - intent: delete
+      - action: utter_show_selected_option
+
+  - story: User chooses to modify
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_show_options
+      - intent: modify
+      - action: utter_show_selected_option
+
+  - story: User chooses to consult
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_show_options
+      - intent: consult
+      - action: utter_show_selected_option
