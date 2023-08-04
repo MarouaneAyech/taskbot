@@ -2,32 +2,47 @@ version: "3.1"
 
 intents:
   - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - add
+  - delete
+  - modify
+  - consult
 
 responses:
+
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Bonjour" 
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_show_options: 
+    - text : "Voici mes options :"
+      buttons:
+      - title: "Ajouter"
+        payload: '/add'
+      - title: "Supprimer"
+        payload: '/delete'
+      - title: "Modifier"
+        payload: '/modify'
+      - title: "Consulter"
+        payload: '/consult'
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_show_selected_option:
+    - text: "Votre choix est \"{option}\""
 
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+slots:
+  option:
+    type: text
+    mappings:
+    - type: from_intent
+      intent: add
+      value: Ajouter
+    - type: from_intent
+      intent: delete
+      value: Supp
+    - type: from_intent
+      intent: modify
+      value: modifier
+    - type: from_intent
+      intent: consult
+      value: consulter
 
 session_config:
   session_expiration_time: 60
