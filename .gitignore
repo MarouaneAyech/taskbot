@@ -1,2 +1,5 @@
 models/
 venv_taskbot/ 
+.rasa/
+.rasa/cache/cache.db
+actions/pycache
