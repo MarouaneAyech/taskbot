@@ -8,6 +8,34 @@ stories:
       - action: utter_show_options
       - intent: add
       - action: utter_show_selected_option
+      - slot_was_set:
+          - option: "Ajouter"
+      - action: utter_ask_title
+      - intent: inform
+        entities:
+          - task_title
+      - slot_was_set:
+          - task_title: "{task_title}"
+      - action: utter_ask_date
+      - intent: inform
+        entities:
+          - task_date
+      - slot_was_set:
+          - task_date: "{task_date}"
+      - action: utter_ask_time
+      - intent: inform
+        entities:
+          - task_time
+      - slot_was_set:
+          - task_time: "{task_time}"
+      - action: utter_ask_description
+      - intent: inform
+        entities:
+          - task_description
+      - slot_was_set:
+          - task_description: "{task_description}"
+      - action: utter_confirm_task
+
 
   - story: User chooses to delete
     steps:

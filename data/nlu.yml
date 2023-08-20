@@ -26,3 +26,9 @@ nlu:
     examples: |
       - consulter le calendrier
       - afficher le calendrier
+  - intent: inform
+    examples: |
+      - {task_title}
+      - {task_date}
+      - {task_time}
+      - {task_description}

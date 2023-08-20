@@ -26,23 +26,44 @@ responses:
 
   utter_show_selected_option:
     - text: "Votre choix est \"{option}\""
+  utter_ask_title:
+    - text: "Veuillez saisir le titre de la nouvelle tâche :"
 
+  utter_ask_date:
+    - text: "Veuillez saisir la date de la nouvelle tâche au format JJ/MM/AAAA :"
+
+  utter_ask_time:
+    - text: "Veuillez saisir l'heure de la nouvelle tâche au format HH:MM :"
+
+  utter_ask_description:
+    - text: "Veuillez saisir la description de la nouvelle tâche :"
+
+  utter_task_added_successfully:
+    - text: "La tâche \"{title}\" a été ajoutée avec succès pour le {date} à {time}. Description : {description}"
 slots:
   option:
     type: text
     mappings:
-    - type: from_intent
-      intent: add
-      value: Ajouter
-    - type: from_intent
-      intent: delete
-      value: Supp
-    - type: from_intent
-      intent: modify
-      value: modifier
-    - type: from_intent
-      intent: consult
-      value: consulter
+      - type: from_intent
+        intent: add
+        value: Ajouter
+      - type: from_intent
+        intent: delete
+        value: Supp
+      - type: from_intent
+        intent: modify
+        value: modifier
+      - type: from_intent
+        intent: consult
+        value: consulter
+  task_title:
+    type: text
+  task_date:
+    type: text
+  task_time:
+    type: text
+  task_description:
+    type: text
 
 session_config:
   session_expiration_time: 60
