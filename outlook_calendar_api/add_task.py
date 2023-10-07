@@ -5,8 +5,8 @@ auth_url = "https://login.microsoftonline.com/a2d8336e-a299-4d52-8636-b7ef8c117a
 
 my_email = "xxxxx@pi.tn"
 my_pass = "xxxxxx"
-client_id = "c6e7381b-14b1-45e4-956b-3d7347aeb5cc"
-client_secret = "9Q38Q~1U.bTzsgy476GlKnYrGzTQx2JYQMFhoamF"
+client_id = "4cb54644-785a-48d7-abcd-be881aa75f80"
+client_secret = "Eh88Q~wIe2Pei3P35cXuN_iO0OKWRCyZx2bchaQ4"
 data = {
     "grant_type": "password",
     "client_id": client_id,
